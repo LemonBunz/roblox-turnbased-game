@@ -81,3 +81,4 @@ local teamPositionsFolder = battleField.TeamPositionsFolder
 local tbGame= GAME:new("Test Game", "Idle", currentTeamTest, initialTurnsTable)
 tbGame:PositionTeam(teamsFolder, teamPositionsFolder)
 --tbGame:Start()
+
