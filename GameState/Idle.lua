@@ -4,7 +4,7 @@ function Idle:OnEnter(tbgame)
 end
 
 function Idle:OnUpdate(tbgame) 
-	print("Updating GameOver State")
+	print("Updating Idle State")
 	local stateMachine = tbgame.StateMachine
 	local contestants = tbgame.Contestants
 	local player1 = contestants.Player1
@@ -17,5 +17,6 @@ function Idle:OnExit(tbgame)
 	print("Exited Idle State")
 end
 return Idle
+
 
 
