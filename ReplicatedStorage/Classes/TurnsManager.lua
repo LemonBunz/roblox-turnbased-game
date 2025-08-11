@@ -15,7 +15,7 @@ function TurnsManager:new(currentTeam, InitialTurnsTable)
 			1 = Combatant1,
 			2 = Combatant1,
 			3 = Combatant1, ...
-			n = Combatantn
+			n = Combatant n
 	}
 	]]
 	
@@ -42,3 +42,4 @@ function TurnsManager:ReorderTeamSlots(teamName)
 end
 
 return TurnsManager
+
