@@ -36,8 +36,6 @@ function StateMachine:ChangeState(newStateName)
 
 	local newState = self.GameState[newStateName]
 	assert(newState, "State ".. tostring(newStateName).." not found")
-
-
 	
 	self.CurrentState = newState
 	self.CurrentStateName = newStateName
@@ -52,4 +50,5 @@ end
 
 
 return StateMachine
+
 
