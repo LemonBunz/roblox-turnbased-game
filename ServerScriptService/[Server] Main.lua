@@ -1,7 +1,3 @@
---[[
-	Right now I'm going to be using the same team system as the old game.
-	Then I need to work on the team positioning system. 
-]]
 --Services
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
@@ -81,4 +77,5 @@ local teamPositionsFolder = battleField.TeamPositionsFolder
 local tbGame= GAME:new("Test Game", "Idle", currentTeamTest, initialTurnsTable)
 tbGame:PositionTeam(teamsFolder, teamPositionsFolder)
 --tbGame:Start()
+
 
