@@ -1,13 +1,19 @@
 local Idle = {}
-function Idle:OnEnter() 
+function Idle:OnEnter(tbgame) 
 	print("Entered Idle State")
 end
 
-function Idle:OnUpdate() 
-	print("Updating Idle State")
+function Idle:OnUpdate(tbgame) 
+	local stateMachine = tbgame.StateMachine
+	local contestants = tbgame.Contestants
+	local player1 = contestants.Player1
+	
+	stateMachine:ChangeState("EnemyTurn") -- Change State
+	stateMachine:Update() --Update NewState:OnUpdate()
 end
 
-function Idle:OnExit() 
+function Idle:OnExit(tbgame) 
 	print("Exited Idle State")
 end
 return Idle
+
