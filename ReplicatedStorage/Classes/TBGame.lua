@@ -5,7 +5,7 @@ local RunService = game:GetService("RunService")
 local TBGame = {}
 TBGame.__index = TBGame
 
-function TBGame:new(name, initialStateName, currentInitialTeam, initialturnsTable, InitialContestants)
+function TBGame:new(name, initialStateName, currentInitialTeam, initialturnsTable, initialContestants)
 	if (not initialStateName) then
 		error("Missing initial state name")
 		return
@@ -23,7 +23,7 @@ function TBGame:new(name, initialStateName, currentInitialTeam, initialturnsTabl
 	self.Name = name or "NoName"
 	self.TurnsManager = TurnsManager:new(currentInitialTeam ,initialturnsTable);
 	self.StateMachine = StateMachine:new(initialStateName, self);
-	self.Contestants = InitialContestants
+	self.Contestants = initialContestants
 	print("New Game Created"..self.Name)
 	return self
 end
