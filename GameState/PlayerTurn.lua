@@ -4,6 +4,7 @@ function PlayerTurn:OnEnter(tbgame)
 end
 
 function PlayerTurn:OnUpdate(tbgame) 
+	print("Updating PlayerTurn State")
 	local stateMachine = tbgame.StateMachine
 	local contestants = tbgame.Contestants
 	local player1 = contestants.Player1
@@ -16,4 +17,5 @@ function PlayerTurn:OnExit(tbgame)
 	print("Exited PlayerTurn State")
 end
 return PlayerTurn
+
 
