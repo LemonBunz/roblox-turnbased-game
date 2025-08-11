@@ -5,11 +5,25 @@ local RunService = game:GetService("RunService")
 local TBGame = {}
 TBGame.__index = TBGame
 
-function TBGame:new(name, initialStateName, currentTeam, initialturnsTable)
+function TBGame:new(name, initialStateName, currentInitialTeam, initialturnsTable, InitialContestants)
+	if (not initialStateName) then
+		error("Missing initial state name")
+		return
+	end
+	if (not currentInitialTeam) then
+		error("Missing initial team")
+		return
+	end
+	if (not initialturnsTable) then
+		error("Missing initial turns table")
+		return
+	end
+	
 	local self = setmetatable({}, TBGame)
 	self.Name = name or "NoName"
-	self.TurnsManager = TurnsManager:new(currentTeam ,initialturnsTable);
-	self.StateMachine = StateMachine:new(initialStateName);
+	self.TurnsManager = TurnsManager:new(currentInitialTeam ,initialturnsTable);
+	self.StateMachine = StateMachine:new(initialStateName, self);
+	self.Contestants = InitialContestants
 	print("New Game Created"..self.Name)
 	return self
 end
@@ -42,13 +56,7 @@ function TBGame:PositionTeam(teamsFolder, teamPositionsFolder)
 end	
 
 function TBGame:Start() 
-	RunService.Heartbeat:Connect(function(T) 
-		print(self.StateMachine)
-		self.StateMachine:Update()
-	end)
+	self.StateMachine:Update()
 end
 
-
 return TBGame
-
-
